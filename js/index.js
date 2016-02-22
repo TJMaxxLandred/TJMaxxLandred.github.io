@@ -34,7 +34,7 @@ function draw() {
 
   ctx.drawImage(court, 0, 0, 750, 450);
   ctx.drawImage(img, zX, 190, 250, 450);
-  //ctx.drawImage(ball, x, y, 75, 75);
+  ctx.drawImage(ball, x, y, 75, 75);
 
   vY += gravity
   y += vY
