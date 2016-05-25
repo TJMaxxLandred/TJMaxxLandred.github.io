@@ -12,22 +12,32 @@ document.body.addEventListener("keyup", function(e) {
 });
 
 var ball = new Image();
-ball.src = 'http://clipartsign.com/upload/2015/12/02/soccer-ball-clip-art-sports-3.png';
+ball.src = 'http://tjmaxxlandred.github.io/Images/Ball.png';
 
 var court = new Image();
-court.src = 'http://dtfjihky7xwic.cloudfront.net/sites/default/files/styles/article_image/public/Sports/lakers-staples-center.jpg?itok=63E3xD2B';
+court.src = 'http://tjmaxxlandred.github.io/Images/court.jpg';
 
 var img = new Image();
-img.src = 'http://i.imgur.com/bh1VImJ.png';
+img.src = 'http://tjmaxxlandred.github.io/Images/The.man.png';
 
+//coordinates of ball
 var x = 260
 var y = 120
+
+//movement of ball
 var vY = -3
 var gravity = .1
+
+//coordinates of Zlatan
 var zX = 170
 var vX = 0
+
+//determines angle in which ball bounces
 var random
+
 var score = 0
+
+//distance of bounce
 var D = 2
 
 function draw() {
@@ -36,10 +46,15 @@ function draw() {
   ctx.drawImage(img, zX, 190, 250, 450);
   ctx.drawImage(ball, x, y, 75, 75);
 
+//vertical movement. gravity creates bounce
   vY += gravity
   y += vY
 
+//check for if the ball hits Zlatan's head
   if (y >= 120 && y <= 140 && x >= (zX + 58) && x <= (zX + 130)) {
+    
+//bounces off head if between zX's
+//if D increases, so does vX
     vY = -3.5
     score += 1
     random = Math.random()
@@ -51,6 +66,8 @@ function draw() {
       D += .2
     }
   }
+  
+  //horizontal movement of balllllll
   x += vX
   if (x >= 675 || x <= 0) {
     vX = -vX
@@ -79,6 +96,7 @@ function draw() {
     D = 2
   }
   
+  //if Zlatan reaches end, he spawns back on other side
   if(zX >= canvas.width){
     zX = -269
   }
