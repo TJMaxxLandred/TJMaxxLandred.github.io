@@ -1,9 +1,12 @@
+/*purple background*/
 html {
 width: 100%;
 height: 100%;
 clip: auto;
 background-color: purple;
 }
+
+/*this is to put the canvas in the middle and create the yellow outline*/
 
 canvas {
     padding: 0;
